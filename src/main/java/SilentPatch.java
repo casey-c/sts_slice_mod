@@ -21,11 +21,6 @@ public class SilentPatch {
         }
     }
 
-    // TODO: check if this patch worked for this old function:
-//    public AbstractCard getStartCardForEvent() {
-//        return new Neutralize();
-//    }
-
     @SpirePatch(clz = TheSilent.class, method = "getStartCardForEvent")
     public static class SliceInEvent {
         public static AbstractCard Postfix(AbstractCard prev) {

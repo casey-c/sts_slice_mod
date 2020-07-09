@@ -1,23 +1,15 @@
 import basemod.abstracts.CustomCard;
-import basemod.abstracts.cardbuilder.actionbuilder.EffectActionBuilder;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.ShoutAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.green.GrandFinale;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.CultistMask;
-import com.megacrit.cardcrawl.vfx.PetalEffect;
-import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
-import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 
 public class RareSlice extends CustomCard {
     public static final String ID = "RareSlice";
@@ -31,7 +23,7 @@ public class RareSlice extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-        this.addToBot(new SFXAction("VO_CULTIST_1A", 0.75f));
+        this.addToBot(new SFXAction("VO_CULTIST_1A", -0.25f, true));
         this.addToBot(new TalkAction(true, "Caw Cawwwwwwwww!", 1.0F, 2.0F));
 
         this.addToBot(new VFXAction(new RareSliceEffect(), 0.7F));
